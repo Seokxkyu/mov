@@ -2,7 +2,7 @@
 
 from mov.api.call import gen_url, req
 
-def test_gen_url():
+def test_url_test():
     url = gen_url()
 
     assert "http" in url
