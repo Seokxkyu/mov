@@ -1,6 +1,17 @@
 # test_call.py
 
-from mov.api.call import gen_url, req
+from mov.api.call import gen_url, req, get_key, req2dataframe
+
+def test_dailyBoxOfficList():
+    l = req2dataframe()
+    assert len(l) > 0
+    v = l[0]
+    assert 'rnum' in v.keys()
+    assert v['rnum'] == '1'
+
+def test_비밀키숨기기():
+    key = get_key()
+    assert key
 
 def test_url_test():
     url = gen_url()
