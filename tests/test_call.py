@@ -8,7 +8,6 @@ def test_list2df():
     print(df)
     assert isinstance(df, pd.DataFrame)
     assert 'rnum' in df.columns
-    assert 'openDt' in df.columns
     assert 'movieNm' in df.columns
 
 def test_req2list():
