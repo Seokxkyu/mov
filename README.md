@@ -10,9 +10,16 @@ $ pip install git+https://github.com/Seokxkyu/mov.git
 ```sh
 $ git clone <URL>
 $ cd <DIR>
+$ source .venv/bin/activate
+$ pytest
 
 # option
 $ pdm venv create
+```
 
-$ source .venv/bin/activate
+
+### setting environment
+```bash
+cat ~/.zshrc | tail -n 3
+
 ```
