@@ -4,6 +4,9 @@
 ```
 # main
 $ pip install git+https://github.com/Seokxkyu/mov.git
+
+# branch
+$ pip install git+https://github.com/Seokxkyu/mov.git@0.2/api
 ```
 
 ### start development
