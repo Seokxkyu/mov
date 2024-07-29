@@ -32,5 +32,5 @@ export MOVIE_API_KEY=<KEY>
 ### error guide
 - [ ] 영화진흥위원회 가입 API KEY 발급 및 환경변수 추가 
 ```
-{'faultInfo': {'messsage': '유효하지않은 키값입니다.', 'errorCode': ''}}
+{'faultInfo': {'message': '유효하지않은 키값입니다.', 'errorCode': '320010'}}
 ```
