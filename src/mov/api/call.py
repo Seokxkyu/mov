@@ -1,6 +1,19 @@
 import requests
 import os
 import pandas as pd
+from datetime import datetime
+
+def save2df():
+    df = list2df()
+    # date = datetime.now().strftime("%Y%m%d")
+    # df에 load_Dt 칼럼 추가 조회 일자 YYYYMMDD 형식으로 
+    # df['load_dt'] = date
+    df['load_dt'] = '20120101'
+    print(df.head(5))
+    
+    # load_Dt 기본으로 partitioning
+    df.to_parquet("~/code/mov/parquet/", partition_cols=['load_dt'])
+    return df 
 
 def list2df():
     l = req2list()
@@ -30,7 +43,6 @@ def req(dt="20120101"):
     
     code = r.status_code
     data = r.json()
-    # print(data)
     return code, data
 
 def gen_url(dt="20120101"):
