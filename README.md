@@ -22,4 +22,7 @@ $ pdm venv create
 ```bash
 cat ~/.zshrc | tail -n 3
 
+
+# MY_ENV
+export MOVIE_API_KEY=<KEY>
 ```
