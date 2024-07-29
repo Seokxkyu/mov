@@ -11,6 +11,8 @@ $ pip install git+https://github.com/Seokxkyu/mov.git
 $ git clone <URL>
 $ cd <DIR>
 $ source .venv/bin/activate
+$ pdm install
+
 $ pytest
 
 # option
