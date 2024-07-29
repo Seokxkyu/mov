@@ -9,7 +9,7 @@ def save2df(load_dt='20120101'):
     # date = datetime.now().strftime("%Y%m%d")
     # df에 load_Dt 칼럼 추가 조회 일자 YYYYMMDD 형식으로 
     # df['load_dt'] = date
-    df['load_dt'] = '20120101'
+    df['load_dt'] = load_dt
     print(df.head(5))
     
     # load_Dt 기본으로 partitioning
