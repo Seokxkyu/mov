@@ -12,7 +12,7 @@ def save2df():
     print(df.head(5))
     
     # load_Dt 기본으로 partitioning
-    df.to_parquet("~/code/mov/parquet/", partition_cols=['load_dt'])
+    df.to_parquet("~/tmp/test_parquet/", partition_cols=['load_dt'])
     return df 
 
 def list2df():
