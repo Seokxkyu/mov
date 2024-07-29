@@ -6,7 +6,6 @@ from datetime import datetime
 def save2df(load_dt='20120101'):
     """airflow 호출 지점"""
     df = list2df(load_dt)
-    # date = datetime.now().strftime("%Y%m%d")
     # df에 load_Dt 칼럼 추가 조회 일자 YYYYMMDD 형식으로 
     # df['load_dt'] = date
     df['load_dt'] = load_dt
@@ -24,12 +23,6 @@ def list2df(load_dt='20120101'):
 def req2list(load_dt='20120101') -> list:
     _, data = req(load_dt)
     l = data['boxOfficeResult']['dailyBoxOfficeList']
-    '''
-    for movie in l:
-        print("\n")
-        for info in movie:
-            print(f'{info} : {movie[info]}') 
-    '''
     return l 
 
 def get_key():
