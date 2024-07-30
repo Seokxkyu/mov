@@ -7,8 +7,8 @@ def echo(yaho):
 
 def apply_type2df(load_dt='20120101', path="~/tmp/test_parquet"):
     df = pd.read_parquet(f"{path}/load_dt={load_dt}")
-    df['rnum'] = pd.to_numberic(df['rnum'])
-    df['rank'] = pd.to_numberic(df['rank'])
+    df['rnum'] = pd.to_numeric(df['rnum'])
+    df['rank'] = pd.to_numeric(df['rank'])
     return df
 
 def save2df(load_dt='20120101'):
