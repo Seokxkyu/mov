@@ -6,6 +6,10 @@ import pandas as pd
 
 def test_apply_type2df():
     df = apply_type2df()
+    num_cols = ['rnum', 'rank', 'rankInten', 'salesAmt', 'audiCnt', 'audiAcc', 'scrnCnt', 'showCnt', 'salesShare', 'salesInten', 'salesChange', 'audiInten', 'audiChange']
+
+    for col in num_cols:
+        assert df[col].dtype in ['int64', 'float64']
     assert isinstance(df, pd.DataFrame)
 
 def test_echo():
