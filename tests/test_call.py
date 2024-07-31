@@ -43,7 +43,7 @@ def test_url_test():
     url = gen_url()
     assert "http" in url
     d = {"multiMovieYn": "N"}
-    url = gen_url(req_val = d)
+    url = gen_url(url_param = d)
     assert "multiMovieYn" in url
 
 def test_req():
