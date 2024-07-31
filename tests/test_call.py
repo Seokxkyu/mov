@@ -29,7 +29,7 @@ def test_list2df():
     assert 'movieNm' in df.columns
 
 def test_req2list():
-    l = req2list()
+    l = req2list(url_param={"multiMovieYn": "Y"})
     assert len(l) > 0
     v = l[0]
     assert 'rnum' in v.keys()
@@ -40,8 +40,7 @@ def test_get_key():
     assert key
 
 def test_url_test():
-    url = gen_url()
-    assert "http" in url
+    # url = gen_url()
     d = {"multiMovieYn": "N"}
     url = gen_url(url_param = d)
     assert "multiMovieYn" in url

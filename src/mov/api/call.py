@@ -19,7 +19,7 @@ def save2df(load_dt='20120101', url_param={}):
     """airflow 호출 지점"""
     df = list2df(load_dt, url_param)
     df['load_dt'] = load_dt
-    print(df.head(5))
+    # print(df.head(5))
     
     # load_Dt 기본으로 partitioning
     df.to_parquet("~/tmp/test_parquet/", partition_cols=['load_dt'])
@@ -33,8 +33,11 @@ def list2df(load_dt='20120101', url_param={}):
 
 # 받아온 json 데이터에서 리스트 추출하기 
 def req2list(load_dt='20120101', url_param={}) -> list:
-    _, data = req(load_dt, url_param)
+    code, data = req(load_dt, url_param)
     l = data['boxOfficeResult']['dailyBoxOfficeList']
+    print(f"API Response Code: {code}")
+    print(f"API Response Data for {url_param}: {data}")
+
     return l 
 
 def get_key():
@@ -60,6 +63,5 @@ def gen_url(dt="20120101", url_param={"multiMovieYn": "N"}):
     for key, value in url_param.items():
         # url = url + "&multiMovieYn=Y"
         url = url + f"&{key}={value}"
-    print(f"Generated URL: {url}")
 
     return url
