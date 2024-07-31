@@ -42,8 +42,9 @@ def test_get_key():
 def test_url_test():
     url = gen_url()
     assert "http" in url
-    url = gen_url('20241231')
-    assert '20241231' in url
+    d = {"multiMovieYn": "N"}
+    url = gen_url(req_val = d)
+    assert "multiMovieYn" in url
 
 def test_req():
     """
