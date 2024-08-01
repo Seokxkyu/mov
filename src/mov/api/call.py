@@ -14,16 +14,14 @@ def apply_type2df(load_dt='20120101', path="~/tmp/test_parquet"):
         df[col] = pd.to_numeric(df[col])
     return df
 
-# 데이터프레임에 load_dt 컬럼 추가하고 parquet로 변환하기
 def save2df(load_dt='20120101', url_param={}):
     """airflow 호출 지점"""
-    df = list2df(load_dt, url_param)
+    df = list2df(load_dt=load_dt, url_param=url_param)
+    # df 에 load_dt 컬럼 추가 (조회 일자 YYYYMMDD 형식 으로)
     df['load_dt'] = load_dt
-    # print(df.head(5))
-    
-    # load_Dt 기본으로 partitioning
-    df.to_parquet("~/tmp/test_parquet/", partition_cols=['load_dt'])
-    return df 
+    # 아래 파일 저장시 load_dt 기준으로 파티셔닝
+    # df.to_parquet('~/tmp/test_parquet', partition_cols=['load_dt'])
+    return df
 
 # 변환한 리스트 데이터프레임으로 변환하기 
 def list2df(load_dt='20120101', url_param={}):
